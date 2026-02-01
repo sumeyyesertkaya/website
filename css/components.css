@@ -50,9 +50,88 @@
 }
 
 @media (max-width: 900px) {
+  /* Compact navbar for small screens: use hamburger toggle */
+  .nav {
+    padding: var(--space-sm) var(--space-md);
+  }
+
+  .nav-inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: var(--space-sm);
+  }
+
+  .nav-logo { margin-right: var(--space-sm); }
+
+  .nav-toggle {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background: transparent;
+    border: none;
+    color: var(--text-primary);
+    padding: 0.25rem;
+    margin-left: auto;
+  }
+
+  /* Remove the menu entirely on small/mobile screens */
+  .nav-toggle,
+  .nav-links {
+    display: none !important;
+  }
+
+  /* hide links by default on mobile; will show when .nav.open is added */
+
   .nav-links {
     display: none;
+    position: fixed;
+    inset: 0;
+    /* transparent background so the blur overlay shows through; no extra panel behind text */
+    background: transparent;
+    padding: 0; /* reset padding */
+    margin: 0;
+    flex-direction: column;
+    gap: var(--space-lg);
+    z-index: 96;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    list-style: none;
+    overflow: auto;
   }
+
+  .nav-links li { width: 100%; }
+
+  .nav-links a {
+    padding: 0.75rem 1.25rem;
+    display: block;
+    width: 100%;
+    color: var(--text-primary);
+    font-size: 1.125rem;
+    font-weight: 600;
+    text-align: center;
+  }
+
+  .nav.open .nav-links { display: flex; align-items: center; justify-content: center; }
+
+  /* overlay is now a real DOM element inserted by JS (.nav-overlay) */
+}
+
+/* Prevent background from scrolling while nav is open */
+body.nav-open {
+  overflow: hidden;
+  height: 100%;
+}
+
+/* Real overlay element used for mobile nav (created/removed by JS) */
+.nav-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(5, 7, 11, 0.45);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+  z-index: 85;
 }
 
 @media (max-width: 480px) {
@@ -167,6 +246,14 @@
   text-transform: uppercase;
   color: var(--accent);
   margin-bottom: var(--space-sm);
+}
+
+/* Center small section labels above headings across all sections */
+.section .section-label {
+  display: block;
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .section-title {

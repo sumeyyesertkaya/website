@@ -40,6 +40,7 @@
   z-index: 1;
   width: 100%;
   margin: 0 auto;
+  padding-top: var(--space-lg);
 }
 
 .hero-headline {
@@ -50,21 +51,92 @@
   line-height: 1.1;
   color: var(--text-primary);
   max-width: 14ch;
-  margin-bottom: var(--space-md);
+  margin-bottom: var(--space-sm);
 }
 
 .hero-subheadline {
   font-size: 1.125rem;
   color: var(--text-secondary);
   max-width: 42ch;
-  margin-bottom: var(--space-xl);
+  margin-bottom: var(--space-md);
   line-height: 1.6;
 }
 
 .hero-cta {
   display: flex;
   flex-wrap: wrap;
-  gap: var(--space-md);
+  gap: var(--space-sm);
+}
+
+@media (min-width: 1024px) {
+  /* move hero content slightly down on large screens for better visual balance */
+  .hero-inner {
+    transform: translateY(8vh);
+    padding-top: var(--space-2xl);
+  }
+}
+
+/* Base horizontal padding for all sections so text isn't flush to edges */
+.section {
+  padding-left: var(--space-lg);
+  padding-right: var(--space-lg);
+}
+
+@media (min-width: 1024px) {
+  .section {
+    padding-left: var(--space-3xl);
+    padding-right: var(--space-3xl);
+  }
+}
+
+/* Ensure the hero banner uses the same horizontal gutters on wide screens */
+@media (min-width: 1024px) {
+  .hero {
+    padding-left: var(--space-3xl);
+    padding-right: var(--space-3xl);
+  }
+}
+
+/* Mobile / narrow viewport tweaks */
+@media (max-width: 900px) {
+  .hero {
+    min-height: 60vh;
+    padding: var(--space-xl) var(--space-md);
+  }
+
+  .hero-inner {
+    text-align: center;
+    padding-left: var(--space-md);
+    padding-right: var(--space-md);
+  }
+
+  .hero-cta {
+    justify-content: center;
+    gap: var(--space-md);
+  }
+
+  .hero-headline {
+    max-width: 28ch;
+    margin-left: auto;
+    margin-right: auto;
+    font-size: clamp(1.6rem, 6vw, 2.4rem);
+  }
+
+  .hero-subheadline { margin-left: auto; margin-right: auto; }
+
+  .mission-inner { justify-content: center; padding-left: var(--space-md); padding-right: var(--space-md); }
+
+  .card { flex-direction: column; }
+
+  .capabilities-grid { grid-template-columns: 1fr; }
+
+  .section-title, .section-intro { text-align: center; margin-left: auto; margin-right: auto; }
+}
+
+@media (max-width: 480px) {
+  .hero { min-height: 50vh; }
+  .hero-headline { font-size: 1.6rem; }
+  .section-intro { font-size: 1rem; }
 }
 
 /* Capabilities – 3–4 large cards */

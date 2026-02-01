@@ -85,11 +85,71 @@
     onScroll();
     revealOnScroll();
     initCapabilitiesBg();
+    initNavToggle();
   }
 
   if (document.readyState === "loading") {
     document.addEventListener("DOMContentLoaded", init);
   } else {
     init();
+  }
+
+  /* Mobile nav toggle */
+  function initNavToggle() {
+    var toggle = document.getElementById("nav-toggle");
+    var navEl = document.getElementById("nav");
+    var links = document.querySelectorAll(".nav-links a");
+    if (!toggle || !navEl) return;
+
+    function setOpen(open) {
+      if (open) {
+        navEl.classList.add("open");
+        toggle.setAttribute("aria-expanded", "true");
+        document.body.classList.add("nav-open");
+        // create overlay element
+        if (!document.querySelector('.nav-overlay')) {
+          var overlay = document.createElement('div');
+          overlay.className = 'nav-overlay';
+          overlay.addEventListener('click', function () { setOpen(false); });
+          document.body.appendChild(overlay);
+        }
+      } else {
+        navEl.classList.remove("open");
+        toggle.setAttribute("aria-expanded", "false");
+        document.body.classList.remove("nav-open");
+        var ov = document.querySelector('.nav-overlay');
+        if (ov) ov.parentNode.removeChild(ov);
+      }
+    }
+
+    toggle.addEventListener("click", function (e) {
+      e.stopPropagation();
+      setOpen(!navEl.classList.contains("open"));
+    });
+
+    // Close when clicking a link
+    links.forEach(function (a) {
+      a.addEventListener("click", function () {
+        setOpen(false);
+      });
+    });
+
+    // Close when clicking the nav background/overlay (pseudo-element targets the nav)
+    navEl.addEventListener("click", function (ev) {
+      if (!navEl.classList.contains("open")) return;
+      var linksEl = navEl.querySelector(".nav-links");
+      // If click happened outside the links area and not on the toggle, close
+      if (linksEl && !linksEl.contains(ev.target) && ev.target !== toggle && !toggle.contains(ev.target)) {
+        setOpen(false);
+      }
+    });
+
+    // Close on Escape or clicking outside
+    document.addEventListener("keydown", function (ev) {
+      if (ev.key === "Escape") setOpen(false);
+    });
+    document.addEventListener("click", function (ev) {
+      if (!navEl.contains(ev.target)) setOpen(false);
+    });
   }
 })();
