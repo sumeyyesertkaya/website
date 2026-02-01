@@ -136,7 +136,7 @@
   position: absolute;
   inset: 0;
   background-color: var(--bg-deep);
-  background-image: url("assets/images/World - mission-vision section.png");
+  background-image: url("../assets/images/World - mission-vision section.png");
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
@@ -194,7 +194,7 @@
 
 /* Global Coverage – dark map + glowing points */
 .coverage {
-  background: var(--bg-carbon);
+  background: #040308;
   padding-top: var(--space-3xl);
   padding-bottom: var(--space-3xl);
   /* position: relative; */
@@ -212,7 +212,46 @@
   margin-right: auto;
 }
 
-/* Map replaced by coverage-map (css/coverage-map.css) */
+/* Coverage image styling */
+.coverage-visual {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--space-lg) 0;
+  position: relative;
+}
+.coverage-image {
+  width: 100%;
+  max-width: 1100px;
+  height: auto;
+  display: block;
+  border-radius: 10px;
+  box-shadow: 0 10px 30px rgba(4,6,12,0.4);
+  position: relative;
+  z-index: 1;
+  /* subtle inner fade so edges blend into dark background */
+  -webkit-box-shadow: inset 0 40px 60px rgba(4,3,8,0.28);
+  box-shadow: 0 10px 30px rgba(4,6,12,0.4), inset 0 40px 60px rgba(4,3,8,0.28);
+}
+
+/* soft edge overlay to blend image into the section background */
+.coverage-visual::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+  background:
+    linear-gradient(90deg, #040308 0%, rgba(4,3,8,0) 12%),
+    linear-gradient(270deg, #040308 0%, rgba(4,3,8,0) 12%),
+    linear-gradient(180deg, #040308 0%, rgba(4,3,8,0) 12%),
+    linear-gradient(0deg, #040308 0%, rgba(4,3,8,0) 12%);
+  background-blend-mode: normal;
+  mix-blend-mode: multiply;
+}
+
+
+
 
 .map-pulse {
   width: 12px;
@@ -231,32 +270,91 @@
 /* Technology & Innovation */
 .technology {
   background: var(--bg-deep);
+  position: relative;
+  overflow: hidden;
+  background-image: url("../assets/images/galaxy.png");
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
 }
+
+.technology::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to bottom,
+    rgba(5, 7, 11, 0.28) 0%,
+    rgba(5, 7, 11, 0.5) 55%,
+    rgba(5, 7, 11, 0.75) 100%
+  );
+  pointer-events: none;
+}
+
+/* place overlay behind content so text stays on top */
+.technology::after { z-index: 0; }
+.technology-split { position: relative; z-index: 1; }
+.tech-content { position: relative; z-index: 1; }
 
 .technology-header {
   margin-bottom: var(--space-2xl);
 }
 
-.technology-visual {
-  min-height: 360px;
-  background: var(--bg-carbon);
-  border-radius: 12px;
-  border: 1px solid rgba(234, 240, 255, 0.06);
+/* Technology split layout (visual + principles) */
+.technology-split {
+  display: flex;
+  gap: var(--space-3xl);
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
   margin-top: var(--space-xl);
+}
+.tech-visual {
+  flex: 1 1 44%;
+  max-width: 560px;
+  min-width: 280px;
+  height: 340px;
+  border-radius: 12px;
+  background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--space-xl);
+  box-shadow: 0 8px 22px rgba(6,10,15,0.45);
   position: relative;
   overflow: hidden;
 }
+.tech-visual svg { width: 100%; height: 100%; display: block; }
+.tech-content {
+  flex: 1 1 48%;
+  min-width: 260px;
+}
+.tech-principles { list-style: none; margin: 0; padding: 0; }
+.tech-principles li { margin-bottom: var(--space-lg); }
+.tech-principles h3 { margin: 0 0 6px 0; font-size: 1.05rem; font-weight: 600; }
+.tech-principles p { margin: 0; color: rgba(255,255,255,0.75); line-height: 1.5; }
 
-.technology-visual::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(180deg, transparent 0%, rgba(5, 7, 11, 0.6) 100%);
+@media (max-width: 900px) {
+  .technology-split { flex-direction: column; }
+  .tech-visual, .tech-content { flex: 1 1 100%; max-width: 100%; }
+  .tech-visual { height: 280px; }
 }
 
 /* Security & Reliability */
 .security {
   background: var(--bg-midnight);
+  background-image: url("../assets/images/background.png");
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  position: relative;
+}
+.security::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to bottom, rgba(4,3,8,0.22), rgba(4,3,8,0.56));
+  pointer-events: none;
 }
 
 .security-grid {
@@ -343,8 +441,20 @@
 /* Final CTA */
 .cta-final {
   background: var(--bg-carbon);
+  background-image: url("../assets/images/background.png");
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  position: relative;
   text-align: center;
   padding: var(--space-3xl) var(--space-lg);
+}
+.cta-final::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to bottom, rgba(4,3,8,0.2), rgba(4,3,8,0.5));
+  pointer-events: none;
 }
 
 .cta-final .section-title {
@@ -422,7 +532,7 @@
   margin-right: auto;
 }
 
-/* Map replaced by coverage-map (css/coverage-map.css) */
+
 
 .map-pulse {
   width: 12px;
