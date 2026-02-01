@@ -1,0 +1,265 @@
+{
+  "project": {
+    "name": "Yeni Web Siteleri Dosyası - Luxury Space Website",
+    "type": "marketing-website",
+    "theme": "luxury space-tech / space infrastructure",
+    "goal": "Build a modern, premium, cinematic space-themed website that feels like a $100M+ aerospace/space-technology company. Space visuals support the brand; they are not the gimmick."
+  },
+  "brand_concept": {
+    "core_concept": "Luxury Space Infrastructure & Future Technology",
+    "positioning": "Elite, calm, confident, trustworthy, high-budget",
+    "keywords": [
+      "luxury",
+      "future",
+      "space",
+      "infrastructure",
+      "precision",
+      "security",
+      "global",
+      "innovation"
+    ],
+    "avoid_identity": [
+      "crypto landing page vibe",
+      "gaming / sci-fi fan site vibe",
+      "NASA-like institutional government vibe",
+      "overly neon / flashy futuristic vibe"
+    ]
+  },
+  "visual_identity": {
+    "color_palette": {
+      "rules": [
+        "Never use pure black (#000000). Use layered dark tones for depth.",
+        "Use ONLY ONE accent color across the entire UI.",
+        "No colorful gradients, no multi-accent palettes, no loud neon glow."
+      ],
+      "background_primary": [
+        { "name": "Deep Space Black", "hex": "#05070B" },
+        { "name": "Midnight Blue", "hex": "#0A1020" },
+        { "name": "Carbon Navy", "hex": "#0E1629" }
+      ],
+      "accent_options": [
+        {
+          "name": "Electric Cyan",
+          "hex": "#00E5FF",
+          "usage": "Primary CTAs, active states, small highlights only",
+          "selected": true
+        },
+        {
+          "name": "Cold Platinum",
+          "hex": "#B8C7E0",
+          "usage": "Alternative accent for a more aristocratic luxury feel",
+          "selected": false
+        }
+      ],
+      "text_and_neutrals": [
+        { "name": "Soft Space White", "hex": "#EAF0FF", "usage": "Primary text on dark" },
+        { "name": "Muted Gray", "hex": "#9AA4B2", "usage": "Secondary text" }
+      ]
+    },
+    "typography": {
+      "heading": {
+        "font_preferred": "Space Grotesk",
+        "font_alternative": "Satoshi",
+        "weights": [500, 600, 700],
+        "letter_spacing": "slightly-wide",
+        "rules": [
+          "Use large headlines with short, strong statements.",
+          "Avoid long heading sentences."
+        ]
+      },
+      "body": {
+        "font": "Inter",
+        "weights": [400, 500],
+        "line_height": "generous",
+        "rules": [
+          "Keep paragraphs short.",
+          "Avoid dense text blocks."
+        ]
+      }
+    },
+    "style_principles": {
+      "do": [
+        "Use large negative space",
+        "Clear section separation",
+        "Visual-first storytelling",
+        "Minimal UI with strong hierarchy",
+        "High-end cinematic atmosphere"
+      ],
+      "dont": [
+        "Crowded UI",
+        "Heavy borders everywhere",
+        "Too many icons",
+        "Overdone glassmorphism",
+        "Aggressive gradients",
+        "Flashy neon glows",
+        "Too many cards with equal weight"
+      ]
+    }
+  },
+  "layout_and_structure": {
+    "global_rules": [
+      "Strong vertical rhythm (consistent spacing between sections).",
+      "Content should breathe; luxury = calm.",
+      "Prioritize visuals and short copy; design is not text-heavy."
+    ],
+    "hero_section": {
+      "priority": "critical",
+      "height": "100vh",
+      "background": "cinematic video OR high-quality still image (custom Higgsfield assets supported)",
+      "composition": "content on left/center-left; visuals on right/background with depth",
+      "headline_example": "Building Infrastructure Beyond Earth",
+      "subheadline_example": "Advanced space-powered technologies designed for a connected future.",
+      "cta": {
+        "primary_label_example": "Explore the Future",
+        "style": {
+          "type": "solid",
+          "background": "#00E5FF",
+          "text": "#05070B",
+          "radius": "rounded (not pill)",
+          "hover": "subtle brightness or underline, no bouncing"
+        }
+      }
+    },
+    "page_flow": [
+      {
+        "section": "Capabilities",
+        "layout": "3-4 large feature cards",
+        "notes": [
+          "Minimal icons",
+          "Focus on clarity and hierarchy",
+          "Each card: short title + 1-2 lines max"
+        ]
+      },
+      {
+        "section": "Mission / Vision",
+        "layout": "one strong visual + short manifesto",
+        "notes": ["Minimal text, premium spacing"]
+      },
+      {
+        "section": "Global Coverage / Network",
+        "layout": "dark world map + glowing points",
+        "notes": [
+          "Subtle animated pulses",
+          "No over-saturation",
+          "Looks like a premium network operations view"
+        ]
+      },
+      {
+        "section": "Technology & Innovation",
+        "layout": "cinematic visuals + concise copy blocks",
+        "notes": ["Use video or deep-space imagery with subtle overlays"]
+      },
+      {
+        "section": "Security & Reliability",
+        "layout": "trust-first layout",
+        "notes": ["No fear marketing; calm and confident tone"]
+      },
+      {
+        "section": "Pricing / Packages",
+        "layout": "clean tier cards",
+        "optional": true,
+        "notes": [
+          "Clear hierarchy",
+          "One featured plan max",
+          "No cluttered comparison tables"
+        ]
+      },
+      {
+        "section": "Testimonials / Partners",
+        "layout": "minimal quotes or logos",
+        "notes": ["Avoid loud sliders; keep it refined"]
+      },
+      {
+        "section": "Final CTA",
+        "layout": "one statement + CTA",
+        "notes": ["High-impact visual background; minimal copy"]
+      },
+      {
+        "section": "Footer",
+        "layout": "minimal",
+        "notes": ["Simple links, subtle separators, no busy widgets"]
+      }
+    ]
+  },
+  "imagery_and_video": {
+    "imagery_style": [
+      "cinematic",
+      "realistic space visuals",
+      "high contrast but not harsh",
+      "premium lighting",
+      "no cartoon/illustration style",
+      "avoid stock-looking visuals"
+    ],
+    "video_style": [
+      "slow motion",
+      "floating movement",
+      "parallax depth",
+      "subtle light transitions",
+      "calm, premium pacing"
+    ],
+    "asset_notes": [
+      "Design must support future custom images/videos (Higgsfield).",
+      "Video backgrounds must have readable overlay strategy."
+    ]
+  },
+  "motion_and_interactions": {
+    "philosophy": "Luxury = calm, subtle, precise. No aggressive motion.",
+    "scroll_animations": {
+      "types": ["fade-in", "slight-translate-y"],
+      "timing": "slow",
+      "easing": "smooth",
+      "rules": ["No dramatic scaling", "No bounce effects"]
+    },
+    "hover_effects": {
+      "rules": [
+        "Subtle glow or underline only",
+        "No loud neon aura",
+        "Keep interactions restrained"
+      ]
+    }
+  },
+  "copy_tone": {
+    "tone": ["confident", "minimal", "technical-but-accessible", "premium"],
+    "avoid": ["hype language", "excessive marketing fluff", "emojis"],
+    "rules": [
+      "Short paragraphs",
+      "Clear hierarchy",
+      "Few words, high impact"
+    ]
+  },
+  "technical_requirements": {
+    "responsive": true,
+    "performance": [
+      "Optimize for large screens and high-res visuals",
+      "Lazy-load heavy media",
+      "Use modern formats when possible (webp/avif for images)",
+      "Defer non-critical scripts"
+    ],
+    "architecture": [
+      "Component-based structure",
+      "Clean, readable CSS/JS",
+      "Reusable sections and consistent spacing scale"
+    ]
+  },
+  "hard_constraints": {
+    "not_this": [
+      "crypto aesthetic",
+      "gaming UI",
+      "sci-fi fan vibe",
+      "overly neon cyberpunk",
+      "pure black backgrounds"
+    ],
+    "must_be": [
+      "luxury technology brand",
+      "calm cinematic look",
+      "trustworthy premium feel",
+      "space as background language, not the product"
+    ]
+  },
+  "next_steps_recommendation": [
+    "Lock the accent choice: Electric Cyan OR Cold Platinum (only one).",
+    "Define the exact homepage sections to include (pricing yes/no).",
+    "Produce a Higgsfield asset plan: hero video + 3 cinematic section visuals.",
+    "Generate a component list for development (Navbar, Hero, FeatureCards, MapSection, PricingCards, Testimonials, CTA, Footer)."
+  ]
+}
