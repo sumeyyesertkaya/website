@@ -1,0 +1,37 @@
+/* Luxury Space – Design Tokens (from brief) */
+
+:root {
+  /* Backgrounds – never pure black */
+  --bg-deep: #05070B;
+  --bg-midnight: #0A1020;
+  --bg-carbon: #0E1629;
+
+  /* Glass accent – frosted platinum / cold white */
+  --accent: #B8C7E0;
+  --accent-hover: #C8D4EC;
+  --glass-bg: rgba(255, 255, 255, 0.06);
+  --glass-border: rgba(255, 255, 255, 0.12);
+  --glass-highlight: rgba(255, 255, 255, 0.08);
+
+  /* Text & neutrals */
+  --text-primary: #EAF0FF;
+  --text-secondary: #9AA4B2;
+
+  /* Typography */
+  --font-heading: "Inter", system-ui, sans-serif;
+  --font-body: "Inter", system-ui, sans-serif;
+
+  /* Spacing scale – strong vertical rhythm */
+  --space-xs: 0.5rem;
+  --space-sm: 1rem;
+  --space-md: 1.5rem;
+  --space-lg: 2.5rem;
+  --space-xl: 4rem;
+  --space-2xl: 6rem;
+  --space-3xl: 8rem;
+
+  /* Transitions – calm, slow */
+  --ease-smooth: cubic-bezier(0.4, 0, 0.2, 1);
+  --duration-slow: 0.5s;
+  --duration-medium: 0.3s;
+}
